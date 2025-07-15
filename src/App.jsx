@@ -13,12 +13,9 @@ function App() {
 
   return (
     <div className="App">
-      {/* 마리오 배경 (고정) */}
       <MarioBackground 
         scrollProgress={scrollProgress} 
       />
-      
-      {/* 포트폴리오 내용 (스크롤됨, 마리오 배경 위에 겹쳐짐) */}
       <PortfolioContent onScroll={handleScroll} />
     </div>
   );

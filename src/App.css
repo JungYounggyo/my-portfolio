@@ -1,240 +1,225 @@
-/* src/App.css */
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap'); /* 픽셀 폰트 */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 body {
   margin: 0;
   font-family: 'Press Start 2P', cursive;
-  overflow: hidden; /* body 스크롤 방지 (PortfolioContent가 스크롤될 것임) */
+  overflow: hidden;
 }
 
 .App {
   width: 100vw;
   height: 100vh;
-  position: relative; /* 자식 요소들의 위치 기준 */
+  position: relative;
   display: flex;
   flex-direction: column;
 }
 
-/* --- 마리오 배경 컨테이너 (고정) --- */
 .mario-background-container {
-  position: fixed; /* 배경은 고정 */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(to bottom, #6b8cff, #a0baff); /* 하늘색 배경 */
-  overflow: hidden; /* 요소들이 밖으로 나가지 않게 */
-  z-index: 10; /* 포트폴리오 내용보다 아래 */
+  background: linear-gradient(to bottom, #6b8cff, #a0baff);
+  overflow: hidden;
+  z-index: 10;
 }
 
-/* 게임 화면 영역 (땅, 마리오) */
 .game-area {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 100%; /* 전체 높이 사용 */
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: flex-end;
   overflow: hidden;
 }
 
-/* 땅 */
 .ground {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 8vh; /* 뷰포트 높이 기준 */
-  background-color: #7c4c23; /* 갈색 땅 */
-  border-top: 0.5vh solid #5a3617; /* 땅 위쪽 경계 */
+  height: 8vh;
+  background-color: #7c4c23;
+  border-top: 0.5vh solid #5a3617;
   z-index: 10;
 }
 
-/* 마리오 (<img> 태그 스타일) */
-.mario-char { /* img 태그에 적용할 클래스 */
+.mario-char {
   position: absolute;
-  bottom: 8vh; /* 땅 위 */
-  left: 0; /* 항상 왼쪽 끝에서 시작 */
-  width: 7vw; /* ✅ 마리오 너비 키움 (이전 5vw) */
-  height: auto; /* 높이는 비율에 맞춰 자동 조절 */
-  max-width: 70px; /* ✅ 최대 크기 키움 (이전 50px) */
-  max-height: 98px; /* ✅ 최대 높이 키움 (이전 70px) */
+  bottom: 8vh;
+  left: 0;
+  width: 7vw;
+  height: auto;
+  max-width: 70px;
+  max-height: 98px;
   z-index: 20;
-  transition: transform 0.1s linear; /* 스크롤에 따른 부드러운 이동 */
+  transition: transform 0.1s linear;
 }
 
-/* --- 상단 바 --- */
 .top-bar {
-  position: absolute; /* 배경 컨테이너 내에서 절대 위치 */
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 8vh; /* 뷰포트 높이 기준 */
-  background-color: rgba(0, 0, 0, 0.6); /* 반투명 배경 */
+  height: 8vh;
+  background-color: rgba(0, 0, 0, 0.6);
   color: white;
   display: flex;
-  justify-content: space-around; /* 요소들 사이에 균등한 공간 배분 */
-  align-items: center; /* 세로 중앙 정렬 */
-  padding: 0 2vw; /* 반응형 패딩 (뷰포트 너비 기준) */
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 2vw;
   box-sizing: border-box;
-  z-index: 100; /* 마리오 배경 위에 */
+  z-index: 100;
 }
 
 .top-bar-item {
   display: flex;
-  align-items: center; /* 아이템 내부 요소 세로 중앙 정렬 */
-  flex: 1; /* 아이템들이 남는 공간을 균등하게 차지하도록 */
-  justify-content: center; /* 아이템 내부 텍스트/이미지 중앙 정렬 */
-  gap: 0.5vw; /* 뷰포트 너비에 비례하는 간격 */
-  min-width: 0; /* flex 아이템이 내용이 너무 길어 넘칠 때 최소 크기 설정 */
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+  gap: 0.5vw;
+  min-width: 0;
 }
 
 .top-bar-item img {
-  height: 5vh; /* ✅ 이미지 크기 키움 (이전 4vh) */
-  width: auto; /* 너비는 높이에 맞춰 자동 조절 */
-  object-fit: contain; /* 이미지가 박스 안에 잘 맞도록 */
+  height: 5vh;
+  width: auto;
+  object-fit: contain;
 }
 
 .top-bar-item span {
-  font-size: clamp(0.8rem, 2.5vw, 2.5rem); 
-  white-space: nowrap; /* 텍스트 줄바꿈 방지 */
+  font-size: clamp(0.8rem, 2.5vw, 2.5rem);
+  white-space: nowrap;
 }
 
-/* --- 반응형: 화면이 작아지면 WORLD 1-1 텍스트 숨김 --- */
-@media (max-width: 768px) { 
-  .top-bar-item.world-text { 
-    display: none; 
+@media (max-width: 768px) {
+  .top-bar-item.world-text {
+    display: none;
   }
   .top-bar-item {
-    flex: 1; 
+    flex: 1;
   }
 }
 
-@media (max-width: 480px) { 
+@media (max-width: 480px) {
   .top-bar-item {
     gap: 0.2vw;
   }
   .top-bar-item img {
-    height: 4.5vh; /* ✅ 이미지 크기 살짝 더 키움 */
+    height: 4.5vh;
   }
   .top-bar-item span {
-    font-size: clamp(0.7rem, 2vw, 2rem); 
+    font-size: clamp(0.7rem, 2vw, 2rem);
   }
 }
 
-/* --- 구름 텍스트 스타일 강화 --- */
 .cloud-text {
   position: absolute;
-  top: 20%; /* 화면 위에서 20% 위치 */
+  top: 20%;
   left: 50%;
   transform: translateX(-50%);
-  color: #FFFFFF; /* 순수 흰색으로 변경 */
-  font-size: 5.5vw; /* 폰트 크기 대폭 증가 (뷰포트 너비에 비례) */
-  max-font-size: 80px; /* 최대 폰트 크기 지정 (너무 커지는 것 방지) */
-  text-shadow: 
-    3px 3px 0px rgba(255, 255, 255, 0.8), /* 더 강한 흰색 그림자 */
+  color: #FFFFFF;
+  font-size: 5.5vw;
+  max-font-size: 80px;
+  text-shadow:
+    3px 3px 0px rgba(255, 255, 255, 0.8),
     -3px -3px 0px rgba(255, 255, 255, 0.8),
     3px -3px 0px rgba(255, 255, 255, 0.8),
     -3px 3px 0px rgba(255, 255, 255, 0.8),
-    0 0 15px rgba(255, 255, 255, 0.5); /* 은은한 발광 효과도 강화 */
-  text-align: center; /* 텍스트 중앙 정렬 (줄바꿈 후에도 보기 좋게) */
-  z-index: 15; /* 마리오보다 낮고 배경보다 높게 */
+    0 0 15px rgba(255, 255, 255, 0.5);
+  text-align: center;
+  z-index: 15;
 }
 
-/* --- 마리오 블록 스타일 --- */
 .mario-blocks-container {
   position: absolute;
-  bottom: 20vh; /* 마리오 점프해서 닿을 정도의 높이 (땅에서 12vh 위) */
+  bottom: 20vh;
   left: 50%;
   transform: translateX(-50%);
-  display: flex; /* 블록들을 가로로 나열 */
-  gap: 0.5vw; /* 블록들 사이 간격 */
-  z-index: 18; /* 마리오와 구름 텍스트 사이 (마리오 20, 구름 15) */
+  display: flex;
+  gap: 0.5vw;
+  z-index: 18;
 }
 
 .mario-block-item {
-  width: 7vw; /* ✅ 반응형 블록 크기 키움 (이전 6vw) */
-  height: 7vw; /* ✅ 정사각형 유지 */
-  max-width: 70px; /* ✅ 최대 크기 키움 (이전 60px) */
-  max-height: 70px; /* ✅ 최대 높이 키움 */
-  box-sizing: border-box; /* 패딩과 보더를 너비/높이에 포함 */
-  display: flex; /* 내부 이미지/콘텐츠 중앙 정렬용 */
+  width: 7vw;
+  height: 7vw;
+  max-width: 70px;
+  max-height: 70px;
+  box-sizing: border-box;
+  display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* ✅ 갈색 일반 박스 스타일 (HTML 태그로 스타일링) */
 .brown-block {
-  background-color: #8B4513; /* 갈색 */
-  border: 2px solid #5A2D0A; /* 진한 갈색 테두리 */
+  background-color: #8B4513;
+  border: 2px solid #5A2D0A;
 }
 
-/* 미스테리 박스 스타일 */
-.mario-block-item.mystery-box img { /* 미스테리 박스 아이템 내부 이미지 */
-  width: 100%; /* 이미지 크기를 부모 div에 맞춤 */
+.mario-block-item.mystery-box img {
+  width: 100%;
   height: 100%;
   object-fit: contain;
 }
 
-/* 미스테리 박스 애니메이션 */
 @keyframes mysteryBounce {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-0.5vh); } /* 살짝 위로 튕기기 */
+  50% { transform: translateY(-0.5vh); }
 }
 
-.mario-block-item.mystery-box img { /* 미스테리 박스 이미지에 애니메이션 적용 */
-  animation: mysteryBounce 1.5s infinite ease-in-out; /* 무한 반복 */
+.mario-block-item.mystery-box img {
+  animation: mysteryBounce 1.5s infinite ease-in-out;
 }
 
-
-/* --- 포트폴리오 내용 (스크롤 가능) --- */
 .portfolio-overlay-content {
-  position: absolute; /* 마리오 배경 위에 겹쳐짐 */
+  position: absolute;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  overflow-y: scroll; /* 이 컴포넌트만 스크롤 가능 */
-  background-color: rgba(255, 255, 255, 0.05); /* 투명도 0.05 */
-  z-index: 50; /* 마리오 배경보다 위 */
-  padding: 5vh 5vw; /* 반응형 패딩 */
+  overflow-y: scroll;
+  background-color: rgba(255, 255, 255, 0.05);
+  z-index: 50;
+  padding: 5vh 5vw;
   box-sizing: border-box;
   color: #333;
-  font-size: 2vh; /* 반응형 폰트 크기 */
+  font-size: 2vh;
   line-height: 1.6;
 }
 
-/* 포트폴리오 내용 내부 요소 스타일은 그대로 유지 */
-.portfolio-section-title { /* h2 스타일 */
+.portfolio-section-title {
   font-size: 3vh;
   margin-top: 4vh;
   margin-bottom: 2vh;
 }
 
-.portfolio-subsection-title { /* h3 스타일 */
+.portfolio-subsection-title {
   font-size: 2.5vh;
   margin-top: 3vh;
   margin-bottom: 1.5vh;
 }
 
-.portfolio-list { /* ul 스타일 */
+.portfolio-list {
   list-style: none;
   padding: 0;
 }
 
-.portfolio-list-item { /* li 스타일 */
+.portfolio-list-item {
   margin-bottom: 1vh;
 }
 
-.project-card { /* 프로젝트 div 스타일 */
+.project-card {
   min-height: 80vh;
-  border: 1px solid #ddd;
   padding: 20px;
+  border-radius: 50px;
   margin-bottom: 40px;
-  background-color: #fff;
+  background-color: #324bb436;
 }
 
-.project-placeholder { /* 프로젝트 내부 데모 영역 div 스타일 */
+.project-placeholder {
   height: 30vh;
   border: 1px dashed #ccc;
   display: flex;
@@ -243,7 +228,7 @@ body {
   margin: 20px 0;
 }
 
-.portfolio-footer-text { /* 마지막 p 태그 스타일 */
+.portfolio-footer-text {
   text-align: center;
   margin-top: 50px;
   font-size: 2.5vh;
