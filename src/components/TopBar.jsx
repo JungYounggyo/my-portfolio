@@ -5,7 +5,8 @@ function TopBar() {
     <div className="top-bar">
       <div className="top-bar-item">
         <img src="/mario-life.png" alt="Life" />
-        <span>x 3</span>
+        <img src="/mario-life.png" alt="Life" />
+        <img src="/mario-life.png" alt="Life" />
       </div>
       <div className="top-bar-item">
         <img src="/mario-coin.png" alt="Coin" />

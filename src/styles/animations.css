@@ -1,0 +1,20 @@
+@keyframes marioJump {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-5vh); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes mysteryBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-0.5vh); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}

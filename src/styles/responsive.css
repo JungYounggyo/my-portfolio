@@ -1,0 +1,20 @@
+@media (max-width: 768px) { 
+  .top-bar-item.world-text { 
+    display: none; 
+  }
+  .top-bar-item {
+    flex: 1; 
+  }
+}
+
+@media (max-width: 480px) { 
+  .top-bar-item {
+    gap: 0.2vw;
+  }
+  .top-bar-item img {
+    height: 4.5vh; 
+  }
+  .top-bar-item span {
+    font-size: clamp(0.7rem, 2vw, 2rem); 
+  }
+}

@@ -1,22 +1,57 @@
-// src/App.jsx
 import React, { useState } from 'react';
 import MarioBackground from './components/MarioBackground';
 import PortfolioContent from './components/PortfolioContent';
-import './App.css'; // 전체 스타일 불러오기
+import StartOverlay from './components/StartOverlay';
+// import DarkModeToggle from './components/DarkModeToggle'; // ✅ 이 줄은 삭제됩니다.
+import './styles/App.css';
 
 function App() {
-  const [scrollProgress, setScrollProgress] = useState(0); // 스크롤 진행도 (0~1)
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const [currentScreen, setCurrentScreen] = useState('marioIntro'); 
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   const handleScroll = (progress) => {
     setScrollProgress(progress);
   };
 
+  const handleMarioIntroAnimationDone = () => {
+    setCurrentScreen('startScreen');
+  };
+
+  const handleStartPortfolio = () => {
+    setCurrentScreen('mainPortfolio');
+  };
+
+  const toggleDarkMode = () => {
+    setIsDarkMode(prevMode => !prevMode);
+    document.body.classList.toggle('dark-mode');
+  };
+
   return (
-    <div className="App">
+    <div className={`App full-viewport ${isDarkMode ? 'dark-mode' : ''}`}>
       <MarioBackground 
         scrollProgress={scrollProgress} 
+        currentScreen={currentScreen}
+        onIntroAnimationDone={handleMarioIntroAnimationDone}
       />
-      <PortfolioContent onScroll={handleScroll} />
+      
+      {currentScreen === 'startScreen' && (
+        <StartOverlay onStart={handleStartPortfolio} />
+      )}
+
+      {currentScreen === 'mainPortfolio' && (
+        <PortfolioContent onScroll={handleScroll} />
+      )}
+
+      {/* ✅ 여기에 토글 버튼 JSX 코드를 직접 삽입합니다. */}
+      <label className="switch">
+        <input 
+          type="checkbox" 
+          checked={isDarkMode} 
+          onChange={toggleDarkMode} 
+        />
+        <span className="slider round"></span>
+      </label>
     </div>
   );
 }
