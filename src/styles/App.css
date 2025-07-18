@@ -35,7 +35,7 @@ body {
   z-index: 200;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 1s ease-out;
+  transition: opacity 4s ease-out;
 }
 
 .start-overlay.show {
@@ -152,7 +152,7 @@ body {
 }
 
 .top-bar-item img {
-  height: 5vh;
+  height: 7vh;
   width: auto;
   object-fit: contain;
 }
@@ -266,9 +266,10 @@ body {
   height: 100vh;
   overflow-y: scroll;
   z-index: 50;
-  padding: 5vh 5vw;
+  padding: 50px 80px;
   gap: 10vh;
   box-sizing: border-box;
+  justify-content: flex-start;
   color: var(--color-text-dark);
   font-size: 2vh;
   line-height: 1.6;
@@ -278,17 +279,14 @@ body {
   width: 100%;
   border-radius: 50px;
   padding: 20px;
+  background-color: rgba(115, 146, 255, 0.95);
   box-shadow: 0 0 12px var(--color-portfolio-main-content-border);
 }
 
-.project-placeholder {
-  height: 30vh;
-  border: 1px dashed var(--color-project-placeholder-border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 20px 0;
-  background-color: var(--color-project-placeholder-bg);
+.portfolio-main-content.introduce img {
+  height: 100%;
+  width: 50%;
+  max-width: 300px;
 }
 
 /* --- Dark Mode Toggle Switch Styles --- */

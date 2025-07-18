@@ -12,7 +12,7 @@
     gap: 0.2vw;
   }
   .top-bar-item img {
-    height: 4.5vh; 
+    height: 4.5vh !important; 
   }
   .top-bar-item span {
     font-size: clamp(0.7rem, 2vw, 2rem); 
