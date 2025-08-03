@@ -6,23 +6,23 @@ import StartOverlay from './components/StartOverlay';
 import './styles/App.css';
 
 function App() {
-  const [scrollProgress, setScrollProgress] = useState(0);
-  const [currentScreen, setCurrentScreen] = useState('marioIntro'); 
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  let [scrollProgress, setScrollProgress] = useState(0);
+  let [currentScreen, setCurrentScreen] = useState('marioIntro'); 
+  let [isDarkMode, setIsDarkMode] = useState(false);
 
-  const handleScroll = (progress) => {
+  let handleScroll = (progress) => {
     setScrollProgress(progress);
   };
 
-  const handleMarioIntroAnimationDone = () => {
+  let handleMarioIntroAnimationDone = () => {
     setCurrentScreen('startScreen');
   };
 
-  const handleStartPortfolio = () => {
+  let handleStartPortfolio = () => {
     setCurrentScreen('mainPortfolio');
   };
 
-  const toggleDarkMode = () => {
+  let toggleDarkMode = () => {
     setIsDarkMode(prevMode => !prevMode);
     document.body.classList.toggle('dark-mode');
   };

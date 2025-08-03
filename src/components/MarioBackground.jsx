@@ -2,11 +2,11 @@ import React, { useState, useEffect, useRef } from 'react';
 import TopBar from './TopBar';
 
 function MarioBackground({ scrollProgress, currentScreen, onIntroAnimationDone }) {
-  const [marioImageSrc, setMarioImageSrc] = useState('/mario-standing.png');
-  const [marioAnimationClass, setMarioAnimationClass] = useState('');
-  const [marioXPosition, setMarioXPosition] = useState(0); 
+  let [marioImageSrc, setMarioImageSrc] = useState('/mario-standing.png');
+  let [marioAnimationClass, setMarioAnimationClass] = useState('');
+  let [marioXPosition, setMarioXPosition] = useState(0); 
 
-  const marioJumpToggleIntervalRef = useRef(null); 
+  let marioJumpToggleIntervalRef = useRef(null); 
 
   useEffect(() => {
     if (currentScreen === 'marioIntro') {
@@ -14,13 +14,13 @@ function MarioBackground({ scrollProgress, currentScreen, onIntroAnimationDone }
       setMarioImageSrc('/mario-standing.png');
       setMarioAnimationClass('continuous-jump');
 
-      const introDurationTimeout = setTimeout(() => {
+      let introDurationTimeout = setTimeout(() => {
         clearInterval(marioJumpToggleIntervalRef.current);
         onIntroAnimationDone();
       }, 2000); 
 
       let isJumping = true;
-      const toggleInterval = setInterval(() => {
+      let toggleInterval = setInterval(() => {
         isJumping = !isJumping;
         setMarioImageSrc(isJumping ? '/mario-jump.png' : '/mario-standing.png');
       }, 300);
@@ -41,9 +41,9 @@ function MarioBackground({ scrollProgress, currentScreen, onIntroAnimationDone }
 
   useEffect(() => {
     if (currentScreen === 'mainPortfolio') {
-      const marioWidth = window.innerWidth * 0.07; 
-      const maxMarioX = window.innerWidth - marioWidth; 
-      const newX = scrollProgress * maxMarioX;
+      let marioWidth = window.innerWidth * 0.07; 
+      let maxMarioX = window.innerWidth - marioWidth; 
+      let newX = scrollProgress * maxMarioX;
       setMarioXPosition(newX);
     }
   }, [scrollProgress, currentScreen]);

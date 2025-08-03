@@ -3,7 +3,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom'; // useParams 훅 불러오기
 
 function ProductPage() {
-  const { productId } = useParams(); // URL에서 ':productId' 값을 가져와요!
+  let { productId } = useParams(); // URL에서 ':productId' 값을 가져와요!
   console.log(productId);
   return (
     <div>

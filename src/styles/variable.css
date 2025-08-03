@@ -1,0 +1,54 @@
+:root {
+  --color-sky-light: #6b8cff;
+  --color-sky-dark: #a0baff;
+  --color-ground-base: #7c4c23;
+  --color-ground-border: #5a3617;
+  --color-dark-transparent-strong: rgba(0, 0, 0, 0.8);
+  --color-dark-transparent-medium: rgba(0, 0, 0, 0.6);
+  --color-white: #FFFFFF;
+  --color-text-dark: #333;
+  --color-white-transparent-very-light: rgba(255, 255, 255, 0.05);
+  --color-white-transparent-medium: rgba(255, 255, 255, 0.9);
+  --color-project-card-border: #ddd;
+  --color-project-card-bg: #fff;
+  --color-project-placeholder-border: #ccc;
+  --color-project-placeholder-bg: #eee;
+  --color-button-primary: #4CAF50;
+  --color-button-border: #2e7d32;
+  --color-button-hover: #388e3c;
+  --color-mario-text-shadow: #4CAF50;
+
+  --font-primary: 'Noto Sans KR', sans-serif;
+  --font-thematic: 'Press Start 2P', cursive;
+
+  --color-accent-blue: #4267B2;
+  --color-accent-green: #4CAF50;
+  --color-accent-gold: #FFD700;
+  --color-main-text-shadow: rgba(0,0,0,0.2);
+}
+
+body.dark-mode {
+  --dm-sky-light: #303030;
+  --dm-sky-dark: #505050;
+  --dm-ground-base: #222222;
+  --dm-ground-border: #111111;
+  --dm-dark-transparent-strong: rgba(0, 0, 0, 0.9);
+  --dm-dark-transparent-medium: rgba(0, 0, 0, 0.7);
+  --dm-white: #222222;
+  --dm-text-dark: #eeeeee; /* 기본 텍스트 색상 (다크 모드) */
+  --dm-white-transparent-very-light: rgba(0, 0, 0, 0.2);
+  --dm-white-transparent-medium: rgba(0, 0, 0, 0.85);
+  --dm-project-card-border: #555;
+  --dm-project-card-bg: #444;
+  --dm-project-placeholder-border: #777;
+  --dm-project-placeholder-bg: #666;
+  --dm-button-primary: #66BB6A;
+  --dm-button-border: #4CAF50;
+  --dm-button-hover: #81C784;
+  --dm-mario-text-shadow: #00FF00;
+
+  --dm-accent-blue: #70A0FF;
+  --dm-accent-green: #66BB6A;
+  --dm-accent-gold: #FFEF77;
+  --dm-main-text-shadow: rgba(255,255,255,0.2);
+}
