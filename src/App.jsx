@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import MarioBackground from './components/MarioBackground';
-import PortfolioContent from './components/PortfolioContent';
+// import PortfolioContent from './components/PortfolioContent';
 import StartOverlay from './components/StartOverlay';
 // import DarkModeToggle from './components/DarkModeToggle'; // ✅ 이 줄은 삭제됩니다.
 import './styles/App.css';
@@ -39,11 +39,10 @@ function App() {
         <StartOverlay onStart={handleStartPortfolio} />
       )}
 
-      {currentScreen === 'mainPortfolio' && (
+      {/* {currentScreen === 'mainPortfolio' && (
         <PortfolioContent onScroll={handleScroll} />
-      )}
+      )} */}
 
-      {/* ✅ 여기에 토글 버튼 JSX 코드를 직접 삽입합니다. */}
       <label className="switch">
         <input 
           type="checkbox" 

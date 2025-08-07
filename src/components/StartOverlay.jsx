@@ -4,9 +4,8 @@ function StartOverlay({ onStart }) {
   return (
     <div className="start-overlay show">
       <div className="start-overlay-subtitle">
-        <p>프론트엔드개발자</p>
-        <p>정영교</p>
-        <p>포트폴리오</p>
+        <p>Super Mario</p>
+        <p>GAME</p>
       </div>
       <button className="start-button" onClick={onStart}>
         START

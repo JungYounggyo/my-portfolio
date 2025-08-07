@@ -25,6 +25,9 @@
   --color-accent-green: #4CAF50;
   --color-accent-gold: #FFD700;
   --color-main-text-shadow: rgba(0,0,0,0.2);
+  
+  /* 사이즈 명시 */
+  --lang-imgbox-size: 150px;
 }
 
 body.dark-mode {

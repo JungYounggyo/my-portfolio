@@ -1,9 +1,19 @@
+@media (max-width: 1025px) { 
+
+}
+
 @media (max-width: 768px) { 
   .top-bar-item.world-text { 
     display: none; 
   }
   .top-bar-item {
     flex: 1; 
+  }
+
+  .cloud-text {
+    top: 25% !important;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 

@@ -88,9 +88,8 @@ function PortfolioContent({ onScroll }) {
           images.map((num) => {
             let imagePath = `/langImg/${num}.png`;
             return (
-              <div key={num}>
-                <img src={imagePath} alt={`Image ${num}`} />
-                <p>{imagePath}</p> {/* 주소도 같이 출력 */}
+              <div key={num} className='img-box'>
+                <img src={imagePath} alt={`Image ${num}`}/>
               </div>
             );
           })
@@ -101,8 +100,18 @@ function PortfolioContent({ onScroll }) {
       </div> */}
       
       <div className="portfolio-main-content contact" ref={setRef}>
-        <div>qwer2435@naver.com</div>
-        <div>01040199816</div>
+        <div className='contact-menu'>
+          <img src="/email.png" alt="email"/>
+          <p>qwer2435@naver.com</p>
+        </div>
+        <div className='contact-menu'>
+          <img src="/call.png" alt="phoneNum"/>
+          <p>01040199816</p>
+        </div>
+        <div className='contact-menu'>
+          <img src="/instagram.png" alt="instagram"/>
+          <p>@gyo0_98</p>
+        </div>
       </div>
     </div>
   );
