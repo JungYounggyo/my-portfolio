@@ -136,7 +136,7 @@ function MarioBackground({ currentScreen, onIntroAnimationDone }) {
         <div className="ground"></div>
 
         <div className="cloud-text">
-          <p>Use the arrow keys or buttons to move and jump</p>
+          <p>Use the arrow keys or touch the screen to move Mario</p>
         </div>
 
         <div className="mario-blocks-container">
@@ -148,13 +148,15 @@ function MarioBackground({ currentScreen, onIntroAnimationDone }) {
           <div className="mario-block-item brown-block"></div>
         </div>
 
-        <div className="mario-bush bush-1"></div>
-        <div className="mario-bush bush-2"></div>
-        <div className="mario-bush bush-3"></div>
-
-        <div className="mario-pipe">
-          <img src="/mario-pipe.png" alt="pipe" />
+        <div className="mario-decorate-box">
+          <img className="mario-bush bush-1" src='/mario-bush.png' alt='bush1'></img>
+          <img className="mario-bush bush-2" src='/mario-bush.png' alt='bush1'></img>
+          <img className="mario-bush bush-3" src='/mario-bush.png' alt='bush1'></img>
+          <div className="mario-pipe">
+            <img src="/mario-pipe.png" alt="pipe" />
+          </div>
         </div>
+
 
         <img
           src={marioImageSrc}
